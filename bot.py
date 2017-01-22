@@ -10,12 +10,7 @@ client_operator_chat = {}
 # Реагирует на /start, /help, просто отдаёт приветственное сообщение
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-    keyboard = telebot.types.InlineKeyboardMarkup()
-    menu_button = telebot.types.InlineKeyboardButton(text='Меню', callback_data='menu')
-    site_button = telebot.types.InlineKeyboardButton(text='Прейти на Яндекс', url='https://ya.ru')
-    keyboard.add(menu_button, site_button)
-    bot.send_message(message.chat.id, "Добро пожаловать, я буду Вам помогать!", reply_markup=keyboard)
-    print(bot.send_message(message.chat.id, "Добро пожаловать, я буду Вам помогать!", reply_markup=keyboard))
+    bot.send_message(message.chat.id, "Добро пожаловать, я буду Вам помогать!")
 
 
 # Авторизация операторов по паролю
